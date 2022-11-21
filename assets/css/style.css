@@ -2,6 +2,14 @@
 
 }
 
+nav{
+    display: flex;
+    background-color: #d8a47f;
+    text-align: end;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .hero{
   
 }
