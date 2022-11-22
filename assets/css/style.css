@@ -77,13 +77,19 @@ nav{
   
 }
 
+
 .product h2{
-  
+  font-family: fantasy;
 }
 
 .header{
   
 }
+
+.product{
+background-color: #fcdfca;
+}
+
 
 
 /* FOOTER */
