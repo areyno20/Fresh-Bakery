@@ -33,8 +33,13 @@
             <img src="./assets/images/hero.jpg" alt="" class="heroimg" />
             <div class="row">
               <div class="hero-text">
-                <h2 class="hero_title"></h2>
-                    <p class="hero_desc"></p>
+                <h2 class="hero_title">About:</h2>
+                    <p style="text-align: left;" class="hero_desc">
+                      The pursuit of better ingredients, better craftsmanship and better taste has been what gets us up in the morning. 
+                      It’s this pursuit that made four bakers come together with the same vision – to create a better bakery for all. 
+                      Better morning coffee and weekend delights to have with your families. 
+                      You’re welcome to come in anytime as Fresh Bakery always makes them fresh for its guests.
+                    </p>
                 <div style="text-align: center;"><img src="./assets/images/" alt="" class="" /></div>
             </div>
           </div>
@@ -42,38 +47,56 @@
     </section>
 
 <!-- I added an ID of main below so that in the nave barline when someone clicks on the products button they will be directed to this section with all the products -->
-    <main id="main" class="main">
+    <main class="maincontent" >
       <!-- Main Product section Mario + Aidan -->
       <!-- products (Server Side APIs Week 6 - Activity 24 ) -->
       <!-- Use Third Party API Activity 5 for everything -->
       <h1>Products</h1>
+      <div id='items' class="flexbox items-center mx-auto">
+        
         <div id="product" class="product">
           <img src="./assets/images/cake.jpg" alt="" class="productimages" />
           <h2>Chocolate Cake</h2>
+          <p id="price">$30</p>
           <input type="quantity1"></input>
         </div>
 
         <div id="product" class="product">
           <img src="./assets/images/muffin.jpg" alt="" class="productimages" />
           <h2>Muffins</h2>
+          <p id="price">$15</p>
           <input type="quantity2"></input>
         </div>
 
         <div id="product" class="product">
           <img src="./assets/images/donut.jpg" alt="" class="productimages" />
           <h2>Donuts</h2>
+          <p id="price">$10</p>
           <input type="quantity3"></input>
         </div>
 
         <div id="product" class="product">
-          <img src="./assets/images/croissant.jpg" alt="" class="productimages" />
-          <h2>Croissants</h2>
-          <input type="quantity4"></input>
+            <img src="./assets/images/croissant.jpg" alt="" class="productimages" />
+            <h2>Croissants</h2>
+            <p id="price">$5</p>
+            <input type="quantity4"></input>
         </div>
+
+        </div>
+
+        <div class="orderform">
+        <!--Customer order form with details-->
+        <input type="checkbox" id="pickup" name="pickup" class="font-small">Pickup</input>
+        <input type="checkbox" id="delivery" name="delivery" class="font-small">Delivery</input>
+        
+        </div>
+    
     </main>
 
+
+
       <!-- contact info -->
-      <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="footer-content">
