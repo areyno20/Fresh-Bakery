@@ -1,4 +1,4 @@
-# Fresh Bakery
+# Group7-Project1
 
 For this project we decided as a team to make an app page for a bakery somewhere in Toronto.
 
