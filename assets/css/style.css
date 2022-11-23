@@ -108,12 +108,29 @@ background-color: #fcdfca;
         
     }
 
-.product h2{
-  
+
+/* Order Form */
+
+.orderform{
+    width:auto;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    border: 1.5px solid #000000;
 }
 
-.header{
-  
+.orderform div{
+    padding: 10px;
+}
+.checkout{
+    display: grid;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #49484d;
+}
+
+.totalordercost{
+    padding: 5px;
 }
 
 
