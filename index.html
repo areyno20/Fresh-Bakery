@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1vEJ8WPAghuSXE_gBUH6D5n5Qp_wHp2Y&callback=initMap"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -141,6 +145,7 @@
                 </div>    
             </div>    
         </div>
+        
         <div id="map"> Store Location:</div>
         <!-- <script>
         function initMap(marker){
@@ -156,14 +161,21 @@
             });
           }
         </script> -->
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+    }
+    #map {
+      height: 500px;
+      width:100%;
+        }
+</style>
 
        
   
-    </footer>
+</footer>
 
-
-  <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1vEJ8WPAghuSXE_gBUH6D5n5Qp_wHp2Y&callback=initMap"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/script.js"></script>
   </body>
 </html>
