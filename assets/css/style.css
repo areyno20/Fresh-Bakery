@@ -1,3 +1,13 @@
+*{
+    margin:0;
+    padding: 0;
+  }
+
+  #map {
+    height: 400px;
+    width:100%;
+  }
+
 body{
     background-size: auto;
     background-repeat: repeat;
@@ -22,7 +32,8 @@ nav{
     background-color: #fcdfca;
     text-align: end;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+    
 }
 
 
@@ -77,6 +88,25 @@ nav{
     width: 30%;
 }
 
+#product1{
+background-color: #fcdfca;
+
+}
+
+#product2{
+    background-color: #fcdfca;
+    
+    }
+
+#product3{
+    background-color: #fcdfca;
+    
+    }
+
+#product4{
+    background-color: #fcdfca;
+        
+    }
 
 .product h2{
   

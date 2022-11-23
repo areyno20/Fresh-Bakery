@@ -7,36 +7,10 @@
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    *{
-      margin:0;
-      padding: 0;
-    }
-    #map {
-      height: 500px;
-      width:100%;
-    }
-  </style>
   </head>
 
   <body>
-    <div id="map"></div>
-    <script>
-      function initMap(){
-        var location = {lat: 43.653225, lng:-79.383186}
-        var map = new google.maps.Map(document.getElementById("map"),{
-          zoom: 4,
-          center: location
-        });
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-      }
-    </script>
-    <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1vEJ8WPAghuSXE_gBUH6D5n5Qp_wHp2Y&callback=initMap">
 
-    </script>
 
     <header class="header">
       <!-- Company name with links - Anthony -->
@@ -81,28 +55,28 @@
       <h1>Products</h1>
       <div id='items' class="flexbox items-center mx-auto">
         
-        <div id="product1" class="product">
+        <div id="product1" class="product container">
           <img src="./assets/images/cake.jpg" alt="" class="productimages" />
           <h2>Chocolate Cake</h2>
           <p id="price">$30</p>
           <p><input type="quantity1"></p>
         </div>
 
-        <div id="product2" class="product">
+        <div id="product2" class="product container">
           <img src="./assets/images/muffin.jpg" alt="" class="productimages" />
           <h2>Muffins</h2>
           <p id="price">$15</p>
           <p><input type="quantity2"></p>
         </div>
 
-        <div id="product3" class="product">
+        <div id="product3" class="product container">
           <img src="./assets/images/donut.jpg" alt="" class="productimages" />
           <h2>Donuts</h2>
           <p id="price">$10</p>
           <p><input type="quantity3"></p>
         </div>
 
-        <div id="product4" class="product">
+        <div id="product4" class="product container">
             <img src="./assets/images/croissant.jpg" alt="" class="productimages" />
             <h2>Croissants</h2>
             <p id="price">$5</p>
@@ -167,9 +141,29 @@
                 </div>    
             </div>    
         </div>
+        <div id="map"> Store Location:</div>
+        <!-- <script>
+        function initMap(marker){
+          document.getElementById("map").display
+            var location = {lat: 43.659815, lng: -79.408903,}
+            var map = new google.maps.Map(document.getElementById("map"),{
+              zoom: 4,
+              center: location
+            });
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map
+            });
+          }
+        </script> -->
+
+       
+  
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1vEJ8WPAghuSXE_gBUH6D5n5Qp_wHp2Y&callback=initMap"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./assets/js/script.js"></script>
   </body>
 </html>
