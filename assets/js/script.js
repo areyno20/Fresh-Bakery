@@ -76,21 +76,45 @@ function callback(response, status) {
 }
 
 // delivery and pickup check boxes only one checkbox allowed
-// $("input:checkbox").on('click', function() {
-//     var box= $(this);
-//     if (box.is(":checked")) {
-//       var group = "input:checkbox[name='" + box.attr("name") + "']";
-//       $(group).prop("checked", false);
-//       box.prop("checked", true);
-//     } else {
-//       box.prop("checked", false);
-//     }
-//   });
+
 
 // Order Form Auto Complete
-var autocomplete = google.maps.places.Autocomplete;
-var nameEl = document.querySelector("#name")
-var streetEl= document.querySelector("#street-address") 
-var cityEl = document.querySelector("#postal-code")
-var postalEl = document.querySelector("#city")
-var countryEl = document.querySelector("#country")
+const checkoutButton = document.getElementById("checkout");
+
+function storeData() {
+
+  var nameStorage = document.getElementById("name");
+  var streetAddressStorage = document.getElementById("street-address");
+  var cityStorage = document.getElementById("city");
+  var postalCodeStorage = document.getElementById("postal-code");
+
+  localStorage.setItem("name", nameStorage.value);
+  localStorage.setItem("street-address", streetAddressStorage.value);
+  localStorage.setItem("city", cityStorage.value);
+  localStorage.setItem("postal-code", postalCodeStorage.value);
+
+};
+
+window.onload = function renderLastRegistered() {
+    var nameEl = document.getElementById("name")
+    var streetEl= document.getElementById("street-address") 
+    var cityEl = document.getElementById("city")
+    var postalEl = document.getElementById("postal-code")
+
+    var name = localStorage.getItem("name");
+    nameEl.textContent = name;
+
+    var streetAddress = localStorage.getItem("street-address");
+    streetEl.textContent = streetAddress;
+
+    var city = localStorage.getItem("city");
+    cityEl.textContent = city;
+    
+    var postalCode = localStorage.getItem("postal-code");
+    postalEl.textContent = postalCode;
+
+}
+
+
+
+
