@@ -39,7 +39,7 @@ nav{
 
 /* HERO */
 .hero{
-    margin-left: 1rem;
+    margin-left: 3rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
     position:static;
@@ -62,66 +62,42 @@ nav{
 }
 
 .maincontent h1{
-    margin-left: 2rem;
     margin-bottom: 20px;
     font-size: 35px;
-    padding-left: 1%;
-    height: 20%;
+    padding-left: 3%;
 }
 
-.maincontent div{
+/* Products */
+.products {
     margin-left: 2rem;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+/* Order Form */
+.orderForm {
+    margin-left: 0rem;
     margin-bottom: 20px;
     font-size: 35px;
     padding-left: 1%;
+    padding-bottom: 1%;
     height: 20%;
     background-color: #ffffff;
 }
 
-/* Products */
-.product h2 {
-    font-size: 20px;
-    padding-left: 1%;
+.formHeader h3 {
+    padding-top: 1%;
 }
 
-.product img{
-    width: 30%;
+.formHeader p{
+    padding-bottom: 1%;
 }
 
-#product1{
-background-color: #fcdfca;
-
+.infoForm { 
+    border: 1.5px solid #ebdbdb;
 }
 
-#product2{
-    background-color: #fcdfca;
-    
-    }
-
-#product3{
-    background-color: #fcdfca;
-    
-    }
-
-#product4{
-    background-color: #fcdfca;
-        
-    }
-
-
-/* Order Form */
-
-.orderform{
-    width:auto;
-    height: auto;
-    display: grid;
-    justify-content: center;
-    border: 1.5px solid #000000;
-}
-
-.orderform div{
-    padding: 10px;
-}
+/* Checkout */
 .checkout{
     display: grid;
     text-align: center;
