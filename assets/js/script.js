@@ -1,3 +1,4 @@
+$(function(){
 // Total Order
 var orderNumber= document.getElementById('quantity') ; 
 var totalOrder= document.getElementById('totalorder') ; 
@@ -15,8 +16,6 @@ function orderInput(){
 
 }
 
-var map = document.getElementById('map');
-
 //Displays the location of the store at the bottom
 function initMap(){
   document.getElementById("map").display
@@ -33,9 +32,9 @@ function initMap(){
   }
   initMap();
 
-  function distancebetween(){
-    //calculation between the initmap and user location input
-  }
+function distancebetween(){
+  //calculation between the initmap and user location input
+}
 
 var origin2 = 'St Patrick Station, Toronto, Canada';
 var destinationA = 'Finch Station, Toronto, Canada';
@@ -79,6 +78,7 @@ function callback(response, status) {
 
 
 // Order Form Auto Complete
+
 const checkoutButton = document.getElementById("checkout");
 
 function storeData() {
@@ -92,7 +92,6 @@ function storeData() {
   localStorage.setItem("street-address", streetAddressStorage.value);
   localStorage.setItem("city", cityStorage.value);
   localStorage.setItem("postal-code", postalCodeStorage.value);
-
 };
 
 window.onload = function renderLastRegistered() {
@@ -114,6 +113,8 @@ window.onload = function renderLastRegistered() {
     postalEl.textContent = postalCode;
 
 }
+
+
 
 
 
