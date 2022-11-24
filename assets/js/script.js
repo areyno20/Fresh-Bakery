@@ -139,10 +139,4 @@ function initMap(){
     
   }
   initMap();
-
 });
-
-
-
-
-
