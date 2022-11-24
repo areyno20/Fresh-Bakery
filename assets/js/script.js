@@ -111,11 +111,4 @@ window.onload = function renderLastRegistered() {
     
     var postalCode = localStorage.getItem("postal-code");
     postalEl.textContent = postalCode;
-
-}
-
-
-
-
-
-
+}})
