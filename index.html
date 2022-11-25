@@ -100,14 +100,9 @@
 
         <!--Customer order form with details - LOCAL STORAGE TO SAVE DETAILS-->
     </main>
-      <div>
-        <input type="checkbox" id="check" name="pickup" class="font-small">Pickup</input>
-        <input type="checkbox" id="check" name="delivery" class="font-small">Delivery</input>
-      </div>
 
       <div class="orderForm mt-10 ml-8 sm:mt-0">
         <div class="md:grid md:grid-cols-3 md:gap-6">
-
           <div class="formHeader mt-5 md:col-span-2 md:mt-1">
             <div class="md:col-span-1">
               <div class="px-4 sm:px-0">
@@ -157,10 +152,17 @@
                       <option>Ontario</option>
                       </select>
                     </div>
-      
+
                     <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                       <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP / Postal code</label>
                       <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 block w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
+                    </div>
+                    <div class="col-span-6 sm:col-span-2 lg:col-span-2">
+                      <label for="deliveryMethod" class="block text-sm font-medium text-gray-700">Deliver / Pickup</label>
+                      <select type="text" name="deliveryMethod" id="deliveryMethod" autocomplete="deliver-option1" class="mt-1 block w-full rounded-md border border-gray-400 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                      <option>Delivery</option>
+                      <option>Pickup</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -176,7 +178,6 @@
     <div>
       <label id="travelTime"></label>
     </div>
-
 
       <!-- contact info -->
     <footer class="footer">
