@@ -63,20 +63,20 @@
           <h2 class="sr-only">Products</h2>
       
           <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <section href="#" class="group">
+            <a href="#" class="group">
               <div class="aspect-w-1 aspect-h-10 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/cake.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
               </div>
               <h3 class="mt-4 text-sm text-gray-700">Chocolate Cake</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$30<input type="text" id="fname" name="fname"></p>
-            </section>
-      
+              <p class="mt-1 text-lg font-medium text-gray-900"><input id="cakequantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input>  $30 </p>
+             </a>
+             
             <a href="#" class="group">
               <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/muffin.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
               </div>
               <h3 class="mt-4 text-sm text-gray-700">Muffins</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$15</p>
+              <p class="mt-1 text-lg font-medium text-gray-900"><input id="muffinsquantity" type="number" min="0" class="border-2 w-24 text-align-right quantity"></input> $15 </p>
             </a>
       
             <a href="#" class="group">
@@ -84,7 +84,7 @@
                 <img src="./assets/images/donut.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
               </div>
               <h3 class="mt-4 text-sm text-gray-700">Donuts</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$10</p>
+              <p class="mt-1 text-lg font-medium text-gray-900"><input id="donutsquantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input> $10 </p>
             </a>
       
             <a href="#" class="group">
@@ -92,8 +92,15 @@
                 <img src="./assets/images/croissant.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
               </div>
               <h3 class="mt-4 text-sm text-gray-700">Croissants</h3>
-              <p class="mt-1 text-lg font-medium text-gray-900">$5</p>
+              <p class="mt-1 text-lg font-medium text-gray-900"><input id="croissantsquantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input> $5 </p>
             </a>
+
+            <section class="group">
+              <h3 class="mt-5 text-md text-gray-700 border-2 w-40" >
+                Total Order Cost = <span id="totalorder" class="">0</span>
+              </h3>
+            </section>
+
           </div>
         </article>
       </div>
