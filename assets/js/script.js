@@ -15,7 +15,6 @@ function totalCost (){
   itemPrice.donuts = ($("#donutsquantity").val() * productPrice.donuts)
   itemPrice.croissants = ($("#croissantsquantity").val() * productPrice.croissants)
 
-
   let total = itemPrice.cake + itemPrice.muffins + itemPrice.donuts + itemPrice.croissants;
 
   console.log(total)

@@ -40,7 +40,6 @@ nav{
 /* HERO */
 .hero{
     margin-left: 3rem;
-    margin-left: 3rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
     position:static;
@@ -142,6 +141,3 @@ nav{
     color: #aaa;
     border-bottom:1px dotted #999;
 }
-
-
-
