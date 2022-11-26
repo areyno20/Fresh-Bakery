@@ -9,8 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1vEJ8WPAghuSXE_gBUH6D5n5Qp_wHp2Y"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqaOq4bZ2-tASBzE4iY-skbBxqmKqk2_4&libraries=places"></script>
   </head>
 
   <body>
@@ -63,41 +63,41 @@
           <h2 class="sr-only">Products</h2>
       
           <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            <a href="#" class="group">
-              <div class="aspect-w-1 aspect-h-10 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
+            <section href="#" class="group">
+              <a href="#"  class="aspect-w-1 aspect-h-10 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/cake.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
-              </div>
+              </a>
               <h3 class="mt-4 text-sm text-gray-700">Chocolate Cake</h3>
               <p class="mt-1 text-lg font-medium text-gray-900"><input id="cakequantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input>  $30 </p>
-             </a>
+            </section>
              
-            <a href="#" class="group">
-              <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
+            <section class="group">
+              <a href="#" class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/muffin.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
-              </div>
+              </a>
               <h3 class="mt-4 text-sm text-gray-700">Muffins</h3>
               <p class="mt-1 text-lg font-medium text-gray-900"><input id="muffinsquantity" type="number" min="0" class="border-2 w-24 text-align-right quantity"></input> $15 </p>
-            </a>
+            </section>
       
-            <a href="#" class="group">
-              <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
+            <section class="group">
+              <a href="#"  class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/donut.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
-              </div>
+              </a>
               <h3 class="mt-4 text-sm text-gray-700">Donuts</h3>
               <p class="mt-1 text-lg font-medium text-gray-900"><input id="donutsquantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input> $10 </p>
-            </a>
+            </section>
       
-            <a href="#" class="group">
-              <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
+            <section class="group">
+              <a  href="#" class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8">
                 <img src="./assets/images/croissant.jpg" alt="" class="h-56 w-full group-hover:opacity-75">
-              </div>
+              </a>
               <h3 class="mt-4 text-sm text-gray-700">Croissants</h3>
               <p class="mt-1 text-lg font-medium text-gray-900"><input id="croissantsquantity" type="number"  min="0" class="border-2 w-24 text-align-right quantity"></input> $5 </p>
-            </a>
+            </section>
 
             <section class="group">
-              <h3 class="mt-5 text-md text-gray-700 border-2 w-40" >
-                Total Order Cost = <span id="totalorder" class="">0</span>
+              <h3 class="mt-5 text-md text-gray-700 border-2 w-50" >
+                Total Order Cost = $<span id="totalorder" class="">0</span>
               </h3>
             </section>
 
@@ -136,13 +136,6 @@
                       <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 block w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
                     </div>
       
-                    <div class="col-span-6 sm:col-span-3">
-                      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                      <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-400 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                        <option>Canada</option>
-                      </select>
-                    </div>
-      
                     <div class="col-span-6">
                       <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
                       <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 block w-full rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
@@ -157,6 +150,13 @@
                       <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
                       <select type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 block w-full rounded-md border border-gray-400 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                       <option>Ontario</option>
+                      </select>
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                      <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
+                      <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-400 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <option>Canada</option>
                       </select>
                     </div>
 
@@ -302,5 +302,6 @@
 </footer>
 
   <script src="./assets/js/script.js"></script>
-  </body>
+  
+</body>
 </html>
