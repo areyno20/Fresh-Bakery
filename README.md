@@ -16,20 +16,13 @@ We divided the tasks up by creating "issues" on GitHub so that we could keep tra
 
 Once everything was done we deployed the finished website as seen below:
 
-[!Apppage]
 
-Be deployed to GitHub Pages.
+![Finalimg](./assests/images/Bakerypage.png)
+![Finalimg](./assests/images/Bakerypage1.png)
+![Finalimg](./assests/images/Bakerypage2.png)
 
-Use at least two server-side APIs Links to an external site.. (maps and food data base API)
 
-Use modals instead of alerts, confirms, or prompts.
+Deployed page: https://areyno20.github.io/Group7-Project1/
 
-Use client-side storage to store persistent data.
-
-Be responsive.
-
-Have a polished UI.
-
-Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, and so on).
 
 Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
