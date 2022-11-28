@@ -1,5 +1,6 @@
 # Group7-Project1
 
+## Project Description
 For this project we decided as a team to make an app page for a bakery somewhere in Toronto.
 
 Our imaginery bakery has four products which the customer can select; the system will then use the imformation that the customer provides to display the cost of the products, the total cost of teheir order, time till their order is ready and the distance between the store and their location.  
@@ -16,13 +17,11 @@ We divided the tasks up by creating "issues" on GitHub so that we could keep tra
 
 Once everything was done we deployed the finished website as seen below:
 
-
-![Finalimg](./assests/images/Bakerypage.png)
-![Finalimg](./assests/images/Bakerypage1.png)
-![Finalimg](./assests/images/Bakerypage2.png)
-
-
+## Live Website
 Deployed page: https://areyno20.github.io/Group7-Project1/
 
-
-Have a quality README (including a unique name, description, technologies used, screenshot, and link to the deployed application).
+## Screenshots
+![Screenshot of the Bakery's Header/About Us Section](./assests/images/BakeryHeader.png)
+![Screenshot of the Bakery's Products Section](./assests/images/BakeryProducts.png)
+![Screenshot of the Bakery's Form Section](./assests/images/BakeryForm.png)
+![Screenshot of the Bakery's Footer Section](./assests/images/BakeryFooter.png)
