@@ -32,6 +32,7 @@ $(function()
   var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
   var destination = 'Finch Station, Toronto, Ontario';
   
+  function travelTime (origin, destination) {
   var service = new google.maps.DistanceMatrixService();
   
   service.getDistanceMatrix(
@@ -65,7 +66,7 @@ $(function()
     }
     $('#modal-title').text(`Estimated Travel Time from ${origin} to Fresh Bakery`);
     $('#modal-p').text(`${duration}`);
-  }
+  }}
   
   // Pass order form values to local storage 
   const checkoutButton = document.getElementById("checkout");
@@ -74,6 +75,7 @@ $(function()
     event.preventDefault();
   
     document.getElementById("productModal").classList.remove("modalDisplay");
+    travelTime(origin,destination);
 
     var firstnameStorage = document.getElementById("first-name");
     var lastnameStorage = document.getElementById("last-name");
@@ -181,29 +183,33 @@ function wikipediaText(requestUrl) {
 }
 
 // Modals for Product Descriptions
-$("a").on("click", function(auto){
-  auto.preventDefault();
-});
+// $("a").on("click", function(auto){
+//   auto.preventDefault();
+// });
 
-document.getElementById("blackForestCake").addEventListener("click", function() {
+document.getElementById("blackForestCake").addEventListener("click", function(event) {
+  event.preventDefault();
   let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_Forest_gateau';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
-document.getElementById("crumbCake").addEventListener("click", function() {
+document.getElementById("crumbCake").addEventListener("click", function(event) {
+  event.preventDefault();
   let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Streuselkuchen';
   wikipediaText(requestUrl);
     document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
-document.getElementById("franzbrotchen").addEventListener("click", function() {
+document.getElementById("franzbrotchen").addEventListener("click", function(event) {
+  event.preventDefault();
   let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Franzbrötchen';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
-document.getElementById("berliner").addEventListener("click", function() {
+document.getElementById("berliner").addEventListener("click", function(event) {
+  event.preventDefault();
   let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Berliner_(doughnut)';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
