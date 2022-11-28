@@ -1,4 +1,6 @@
-// Total Order
+$(function(){
+
+// Calculate total cost of products
 function totalCost (){
   
   let productPrice={
@@ -25,12 +27,8 @@ $(function()
  {
     $(".quantity").on("change keyup", totalCost)
 })
-
   
-  function distancebetween(){
-    //calculation between the initmap and user location input
-  }
-  
+  // Google Travel Time API 
   var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
   var destination = 'Finch Station, Toronto, Ontario';
   
@@ -65,20 +63,18 @@ $(function()
         }
       }
     }
-    $('#travelTime').text(`Estimated Travel Time from ${origin}: ${duration}`);
-    console.log(duration);
+    $('#modal-title').text(`Estimated Travel Time from ${origin} to Fresh Bakery`);
+    $('#modal-p').text(`${duration}`);
   }
   
-  // delivery and pickup check boxes only one checkbox allowed
-  
-  
-  // Order Form Auto Complete
-  
+  // Pass order form values to local storage 
   const checkoutButton = document.getElementById("checkout");
   
   checkoutButton.addEventListener("click", function(event){
     event.preventDefault();
   
+    document.getElementById("productModal").classList.remove("modalDisplay");
+
     var firstnameStorage = document.getElementById("first-name");
     var lastnameStorage = document.getElementById("last-name");
     var emailAddressStorage = document.getElementById("email-address");
@@ -140,7 +136,7 @@ $(function()
     document.getElementById("map").display
       var location = {lat: 43.659815, lng: -79.408903}
       var map = new google.maps.Map(document.getElementById("map"),{
-        zoom: 4,
+        zoom: 16,
         center: location
       });
       var marker = new google.maps.Marker({
@@ -150,7 +146,6 @@ $(function()
       
     }
     initMap();
-
 
 //Autocomplete API for address
 let autocomplete;
@@ -166,3 +161,55 @@ function initAutocomplete () {
 
 }
 google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
+// Wikipedia API to grab plain text
+function wikipediaText(requestUrl) {
+  var apiInfo, productInfo;
+  const title = document.getElementById('modal-title');
+  const para = document.getElementById('modal-p');
+  fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    apiInfo = data.query.pages;
+    productInfo = apiInfo[Object.keys(apiInfo)[0]];
+    console.log(productInfo.extract);
+    title.innerHTML = (productInfo.title);
+    para.innerHTML = (productInfo.extract);
+  });
+}
+
+// Modals for Product Descriptions
+$("a").on("click", function(auto){
+  auto.preventDefault();
+});
+
+document.getElementById("blackForestCake").addEventListener("click", function() {
+  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_Forest_gateau';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("crumbCake").addEventListener("click", function() {
+  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Streuselkuchen';
+  wikipediaText(requestUrl);
+    document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("franzbrotchen").addEventListener("click", function() {
+  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Franzbrötchen';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("berliner").addEventListener("click", function() {
+  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Berliner_(doughnut)';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("productModal").addEventListener("click", function() {
+  document.getElementById("productModal").classList.add("modalDisplay");
+});
+});

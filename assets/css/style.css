@@ -141,3 +141,7 @@ nav{
     color: #aaa;
     border-bottom:1px dotted #999;
 }
+
+.modalDisplay {
+    display: none;
+}
