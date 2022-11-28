@@ -29,10 +29,10 @@ $(function()
 })
   
   // Google Travel Time API 
-  var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
   var destination = '33 Ulster St, Toronto, Ontario';
   
   function travelTime (origin, destination) {
+  var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
   var service = new google.maps.DistanceMatrixService();
   
   service.getDistanceMatrix(
@@ -75,7 +75,6 @@ $(function()
     event.preventDefault();
   
     document.getElementById("formModal").classList.remove("modalDisplay");
-    travelTime(origin,destination);
 
     var firstnameStorage = document.getElementById("first-name");
     var lastnameStorage = document.getElementById("last-name");
@@ -85,7 +84,9 @@ $(function()
     var cityStorage = document.getElementById("city");
     var provinceStorage = document.getElementById("region");
     var postalCodeStorage = document.getElementById("postal-code");
-  
+    
+    console.log(firstnameStorage.value, lastnameStorage.value, emailAddressStorage.value, streetAddressStorage.value);
+
     localStorage.setItem("first-name", firstnameStorage.value);
     localStorage.setItem("last-name", lastnameStorage.value);
     localStorage.setItem("email-address", emailAddressStorage.value);
@@ -95,6 +96,12 @@ $(function()
     localStorage.setItem("region", provinceStorage.value);
     localStorage.setItem("postal-code", postalCodeStorage.value);
   
+    travelTime(origin,destination);
+
+    if(streetAddressStorage.value === '') {
+      $('#formModal-title').text(`Please Complete the Entire Form!`);
+    }
+
   window.onload = function renderLastRegistered() {
       var firstnameEl = document.getElementById("first-name")
       var lastnameEl = document.getElementById("last-name")
