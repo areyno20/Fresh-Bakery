@@ -189,28 +189,28 @@ function wikipediaText(requestUrl) {
 
 document.getElementById("blackForestCake").addEventListener("click", function(event) {
   event.preventDefault();
-  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_Forest_gateau';
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_Forest_gateau';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
 document.getElementById("crumbCake").addEventListener("click", function(event) {
   event.preventDefault();
-  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Streuselkuchen';
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Streuselkuchen';
   wikipediaText(requestUrl);
     document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
 document.getElementById("franzbrotchen").addEventListener("click", function(event) {
   event.preventDefault();
-  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Franzbrötchen';
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Franzbrötchen';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
 });
 
 document.getElementById("berliner").addEventListener("click", function(event) {
   event.preventDefault();
-  let requestUrl = 'http://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Berliner_(doughnut)';
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Berliner_(doughnut)';
   wikipediaText(requestUrl);
   document.getElementById("productModal").classList.remove("modalDisplay");
 });
