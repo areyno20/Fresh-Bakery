@@ -9,7 +9,7 @@ One of the requiremnts for the project was to make the page interactive; we achi
 1) By allowing the customer pick the quantity of the products the would like.
 2) By asking the customer to put in their personal information in the order form section so that the system can do the calculation for the distance between locations.
 
-Another project requirement was to use two API's at some point in our code. In order to achive this tasks we decided to use the Google Maps API and the Midíadía REST API. The google maps api was used to to carry out the calculations that tell the user how far they are from the store. The Midíadía REST API tells the customer about the ingredients used to make our products and their nutritional value.
+Another project requirement was to use two API's at some point in our code. In order to achive this tasks we decided to use the Google Maps API and the Wikipedia API. The Google Maps API was used to to carry out the calculations that tell the user how far they are from the store. The Wikipedia API was used to grab information about pastry products that customers may be unfamiliar with.
 
 In order to achieve the CSS styling you see on the app, we found a style sheet called Tailwind, we decided to go with it because it was similar to bootstrap in terms of how easy it is to use. It was very useful in polishing our UI so as to be attractive to potential customers.
 
