@@ -21,7 +21,7 @@ Once everything was done we deployed the finished website as seen below:
 Deployed page: https://areyno20.github.io/Group7-Project1/
 
 ## Screenshots
-![Screenshot of the Bakery's Header/About Us Section](./assests/images/BakeryHeader.png)
-![Screenshot of the Bakery's Products Section](./assests/images/BakeryProducts.png)
-![Screenshot of the Bakery's Form Section](./assests/images/BakeryForm.png)
-![Screenshot of the Bakery's Footer Section](./assests/images/BakeryFooter.png)
+![Screenshot of the Bakery's Header/About Us Section](./assets/images/BakeryHeader.png)
+![Screenshot of the Bakery's Products Section](./assets/images/BakeryProducts.png)
+![Screenshot of the Bakery's Form Section](./assets/images/BakeryForm.png)
+![Screenshot of the Bakery's Footer Section](./assets/images/BakeryFooter.png)
