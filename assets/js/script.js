@@ -1,4 +1,6 @@
-// Total Order
+$(function(){
+
+// Calculate total cost of products
 function totalCost (){
   
   let productPrice={
@@ -25,15 +27,12 @@ $(function()
  {
     $(".quantity").on("change keyup", totalCost)
 })
-
   
-  function distancebetween(){
-    //calculation between the initmap and user location input
-  }
+  // Google Travel Time API 
+  var destination = '33 Ulster St, Toronto, Ontario';
   
+  function travelTime (origin, destination) {
   var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
-  var destination = 'Finch Station, Toronto, Ontario';
-  
   var service = new google.maps.DistanceMatrixService();
   
   service.getDistanceMatrix(
@@ -65,20 +64,18 @@ $(function()
         }
       }
     }
-    $('#travelTime').text(`Estimated Travel Time from ${origin}: ${duration}`);
-    console.log(duration);
-  }
+    $('#formModal-title').text(`Estimated Travel Time from ${origin} to Fresh Bakery`);
+    $('#formModal-p').text(`${duration}`);
+  }}
   
-  // delivery and pickup check boxes only one checkbox allowed
-  
-  
-  // Order Form Auto Complete
-  
+  // Pass order form values to local storage 
   const checkoutButton = document.getElementById("checkout");
   
   checkoutButton.addEventListener("click", function(event){
     event.preventDefault();
   
+    document.getElementById("formModal").classList.remove("modalDisplay");
+
     var firstnameStorage = document.getElementById("first-name");
     var lastnameStorage = document.getElementById("last-name");
     var emailAddressStorage = document.getElementById("email-address");
@@ -87,7 +84,9 @@ $(function()
     var cityStorage = document.getElementById("city");
     var provinceStorage = document.getElementById("region");
     var postalCodeStorage = document.getElementById("postal-code");
-  
+    
+    console.log(firstnameStorage.value, lastnameStorage.value, emailAddressStorage.value, streetAddressStorage.value);
+
     localStorage.setItem("first-name", firstnameStorage.value);
     localStorage.setItem("last-name", lastnameStorage.value);
     localStorage.setItem("email-address", emailAddressStorage.value);
@@ -96,7 +95,19 @@ $(function()
     localStorage.setItem("city", cityStorage.value);
     localStorage.setItem("region", provinceStorage.value);
     localStorage.setItem("postal-code", postalCodeStorage.value);
-  
+
+    if(firstnameStorage.value === '' || 
+      lastnameStorage.value === '' || 
+      emailAddressStorage.value === '' || 
+      streetAddressStorage.value === '' || 
+      cityStorage.value === '' || 
+      postalCodeStorage.value === '') {
+      $('#formModal-title').text(`Please Complete the Entire Form!`);
+      $('#formModal-p').text(``);
+    } else {
+      travelTime(origin,destination);
+    }
+
   window.onload = function renderLastRegistered() {
       var firstnameEl = document.getElementById("first-name")
       var lastnameEl = document.getElementById("last-name")
@@ -140,7 +151,7 @@ $(function()
     document.getElementById("map").display
       var location = {lat: 43.659815, lng: -79.408903}
       var map = new google.maps.Map(document.getElementById("map"),{
-        zoom: 4,
+        zoom: 16,
         center: location
       });
       var marker = new google.maps.Marker({
@@ -150,7 +161,6 @@ $(function()
       
     }
     initMap();
-
 
 //Autocomplete API for address
 // let autocomplete;
@@ -164,5 +174,67 @@ $(function()
 //     fields: ['place_id', 'geometry', 'name']
 //   });
 
-// }
-// google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
+//google.maps.event.addDomListener(window, 'load', initAutocomplete);
+
+// Wikipedia API to grab plain text
+function wikipediaText(requestUrl) {
+  var apiInfo, productInfo;
+  const title = document.getElementById('modal-title');
+  const para = document.getElementById('modal-p');
+  fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    apiInfo = data.query.pages;
+    productInfo = apiInfo[Object.keys(apiInfo)[0]];
+    console.log(productInfo.extract);
+    title.innerHTML = (productInfo.title);
+    para.innerHTML = (productInfo.extract);
+  });
+}
+
+// Modals for Product Descriptions
+// $("a").on("click", function(auto){
+//   auto.preventDefault();
+// });
+
+document.getElementById("blackForestCake").addEventListener("click", function(event) {
+  event.preventDefault();
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Black_Forest_gateau';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("crumbCake").addEventListener("click", function(event) {
+  event.preventDefault();
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Streuselkuchen';
+  wikipediaText(requestUrl);
+    document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("franzbrotchen").addEventListener("click", function(event) {
+  event.preventDefault();
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Franzbrötchen';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("berliner").addEventListener("click", function(event) {
+  event.preventDefault();
+  let requestUrl = 'https://en.wikipedia.org/w/api.php?origin=*&format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=Berliner_(doughnut)';
+  wikipediaText(requestUrl);
+  document.getElementById("productModal").classList.remove("modalDisplay");
+});
+
+document.getElementById("productModal").addEventListener("click", function() {
+  document.getElementById("productModal").classList.add("modalDisplay");
+});
+
+document.getElementById("formModal").addEventListener("click", function() {
+  document.getElementById("formModal").classList.add("modalDisplay");
+});
+
+});
+
