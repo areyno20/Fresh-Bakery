@@ -30,7 +30,7 @@ $(function()
   
   // Google Travel Time API 
   var origin = `${localStorage.getItem("street-address")}, ${localStorage.getItem("city")}, ${localStorage.getItem("region")}`;
-  var destination = 'Finch Station, Toronto, Ontario';
+  var destination = '33 Ulster St, Toronto, Ontario';
   
   function travelTime (origin, destination) {
   var service = new google.maps.DistanceMatrixService();
@@ -64,8 +64,8 @@ $(function()
         }
       }
     }
-    $('#modal-title').text(`Estimated Travel Time from ${origin} to Fresh Bakery`);
-    $('#modal-p').text(`${duration}`);
+    $('#formModal-title').text(`Estimated Travel Time from ${origin} to Fresh Bakery`);
+    $('#formModal-p').text(`${duration}`);
   }}
   
   // Pass order form values to local storage 
@@ -74,7 +74,7 @@ $(function()
   checkoutButton.addEventListener("click", function(event){
     event.preventDefault();
   
-    document.getElementById("productModal").classList.remove("modalDisplay");
+    document.getElementById("formModal").classList.remove("modalDisplay");
     travelTime(origin,destination);
 
     var firstnameStorage = document.getElementById("first-name");
@@ -218,4 +218,9 @@ document.getElementById("berliner").addEventListener("click", function(event) {
 document.getElementById("productModal").addEventListener("click", function() {
   document.getElementById("productModal").classList.add("modalDisplay");
 });
+
+document.getElementById("formModal").addEventListener("click", function() {
+  document.getElementById("formModal").classList.add("modalDisplay");
+});
+
 });
