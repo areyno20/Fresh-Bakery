@@ -95,11 +95,17 @@ $(function()
     localStorage.setItem("city", cityStorage.value);
     localStorage.setItem("region", provinceStorage.value);
     localStorage.setItem("postal-code", postalCodeStorage.value);
-  
-    travelTime(origin,destination);
 
-    if(streetAddressStorage.value === '') {
+    if(firstnameStorage.value === '' || 
+      lastnameStorage.value === '' || 
+      emailAddressStorage.value === '' || 
+      streetAddressStorage.value === '' || 
+      cityStorage.value === '' || 
+      postalCodeStorage.value === '') {
       $('#formModal-title').text(`Please Complete the Entire Form!`);
+      $('#formModal-p').text(``);
+    } else {
+      travelTime(origin,destination);
     }
 
   window.onload = function renderLastRegistered() {
