@@ -153,16 +153,16 @@ $(function()
 
 
 //Autocomplete API for address
-let autocomplete;
+// let autocomplete;
 
-function initAutocomplete () {
-  autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('street-address'),
-  {
-    types:['establistment'],
-    componentRestrictions:{'country' : ['CA']},
-    fields: ['place_id', 'geometry', 'name']
-  });
+// function initAutocomplete () {
+//   autocomplete = new google.maps.places.Autocomplete(
+//     document.getElementById('street-address'),
+//   {
+//     types:['establistment'],
+//     componentRestrictions:{'country' : ['CA']},
+//     fields: ['place_id', 'geometry', 'name']
+//   });
 
-}
-google.maps.event.addDomListener(window, 'load', initAutocomplete);
+// }
+// google.maps.event.addDomListener(window, 'load', initAutocomplete);
