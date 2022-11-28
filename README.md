@@ -18,7 +18,7 @@ We divided the tasks up by creating "issues" on GitHub so that we could keep tra
 Once everything was done we deployed the finished website as seen below:
 
 ## Live Website
-Deployed page: https://areyno20.github.io/Group7-Project1/
+Deployed page: https://areyno20.github.io/Fresh-Bakery/
 
 ## Screenshots
 ![Screenshot of the Bakery's Header/About Us Section](./assets/images/BakeryHeader.png)
