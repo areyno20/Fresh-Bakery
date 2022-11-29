@@ -18,13 +18,12 @@ body{
 .header{
     padding: 35px; 
     background-color: #5D5C61; 
-    border: 2px solid var(--border-one);
 }
 
 .header h1{
     text-align: left;
     font-size: 2em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
 nav ul{
@@ -56,7 +55,7 @@ nav a {
     border: 1.5px solid #8d8d8d;
     background-position: center;
     width:100%;
-    height: 600px;
+    height: 100%;
 }
 
 /* MAIN */
@@ -80,21 +79,16 @@ nav a {
 
 /* Order Form */
 .orderForm {
-    margin-left: 0rem;
-    margin-bottom: 20px;
-    font-size: 35px;
-    padding-left: 1%;
-    padding-bottom: 1%;
-    height: 20%;
+    width: auto;
     background-color: #ffffff;
 }
 
 .formHeader h3 {
-    padding-top: 1%;
+    width: auto;
 }
 
 .formHeader p{
-    padding-bottom: 1%;
+    width: auto;
 }
 
 .infoForm { 
@@ -106,8 +100,8 @@ nav a {
 }
 
 /* Checkout */
-.checkout{
-    display: grid;
+.orderForm{
+    display: flex;
     text-align: center;
     background-color: rgb(255, 255, 255);
     border: 1px solid #49484d;
